@@ -34,3 +34,16 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+
+- task: CMake@1
+  inputs:
+    cmakeArgs: 
+- task: CondaEnvironment@0
+  inputs:
+    environmentName: 'cconda'
+
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: 'edee'
+
